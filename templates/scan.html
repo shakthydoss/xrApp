@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XR</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="QujCLvEYEZK5wEOnZ-rQZrrPv8mu4DtaFMoIOBignQA"/>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    {% include 'common-block-meta.html' %}
+    <style>
+
+    .file_wrapper{
+        padding: 8px 10px;
+        background: #00ad2d;
+        border: 1px solid #00ad2d;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+        margin: 5px;
+    }
+    #fileToUpload {
+        position: absolute;
+        z-index: 1000;
+        opacity: 0;
+        cursor: pointer;
+        right: 0;
+        top: 0;
+        height: 100%;
+        font-size: 24px;
+        width: 100%;
+    }
+
+        .centered {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .details{
+              position: fixed;
+              top: 10%;
+              right:1%;
+              transform: translate(-50%, -50%);
+              color: yellow;
+              text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+              font-size:18px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="grid condensed no-margin no-padding">
+    <div class="row no-margin no-padding">
+        <div class="cell no-margin no-padding">
+            <div class="row cells12">
+                <div class="cell offset2 colspan8">
+                    <center><strong>Welcome to XR</strong></center>
+
+                    <img src="{{ url_for('static', filename='img/default-fruit.jpg') }}" alt="" id="show-picture">
+
+                    <form id="form1" enctype="multipart/form-data" method="post">
+                        <div class="file_wrapper">
+                            <label for="fileToUpload">Scan
+                                <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"
+                                       accept="image/*"
+                                       capture="camera"/>
+                            </label>
+                        </div>
+                        <!--<div id="details"></div>-->
+                        <!--<div>-->
+                        <!--<input type="button" onclick="uploadFile()" value="Upload"/>-->
+                        <!--</div>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     <img src="{{ url_for('static', filename='img/loading.gif') }}" class="centered" id = "loading-img">
+     <div id="details" class="details">-</div>
+</div>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+         document.getElementById("loading-img").style.display = "none";
+         document.getElementById("details").style.display = "none";
+
+
+         function fileSelected() {
+             document.getElementById("loading-img").style.display = "block";
+             uploadFile()
+         }
+         function uploadFile() {
+             var fd = new FormData();
+             var count = document.getElementById('fileToUpload').files.length;
+             for (var index = 0; index < count; index ++)
+             {
+                 var file = document.getElementById('fileToUpload').files[index];
+                 fd.append(file.name, file);
+
+                 // Create ObjectURL
+                 var showPicture = document.querySelector("#show-picture");
+                 var imgURL = createObjectURL(file);
+                 showPicture.src = imgURL;
+             }
+
+
+             $.ajax({
+                url: '/process/',
+                data: fd,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    document.getElementById("loading-img").style.display = "none";
+                    document.getElementById("details").style.display = "block";
+                    $('#details').text(response['data']);
+                }
+            });
+         }
+
+          function createObjectURL ( file ) {
+                if ( window.webkitURL ) {
+                    return window.webkitURL.createObjectURL( file );
+                } else if ( window.URL && window.URL.createObjectURL ) {
+                    return window.URL.createObjectURL( file );
+                } else {
+                    return null;
+                }
+            }
+
+</script>
+</html>

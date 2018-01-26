@@ -1,0 +1,340 @@
+.show-only-on-mobile{display: block !important;}
+.show-only-on-desktop{display: none !important;}
+
+.app-box {
+	border: 1px solid #A9A9A9;
+}
+.app-box:hover {
+	background-color: #e4f2ff;
+}
+
+/*helper class */
+.height100{
+	height: 98%;
+}
+.fix-position{
+    position:fixed !important;
+}
+.app-bar{
+	z-index: 999;
+}
+.formheading{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+.form-group{
+	padding-bottom: 15px;
+}
+
+a.small-button {
+    padding-top:0;
+}
+
+.panelhr {
+	margin: 0;
+	padding: 0;
+	margin-top:5px;
+	margin-bottom: 5px;
+	border-right: 1px dashed #A9A9A9;
+}
+
+.primary.disabled, .primary:disabled{
+    background: rgba(99, 151, 195, 0.75);
+    color: #eee;
+}
+
+/*side-menu */
+.side-menu-wrapper{
+    z-index: 998;
+	background-color: white;
+	display: none;
+    border-right: 1px solid #A9A9A9;
+    -moz-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    width: 50% !important;
+    top:40px;
+    padding-top:0px;
+    margin-top:0px;
+}
+	/* ----------- Non-Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 1) {
+	  	.side-menu-wrapper{
+	  		display: block;
+	  	    -moz-transition: all .3s ease-out;
+	        -webkit-transition: all .3s ease-out;
+	    	transition: all .3s ease-out;
+	    	width: 20% !important;
+	    	top:55px;
+	    }
+	    .show-only-on-mobile{display: none !important;}
+		.show-only-on-desktop{display: block !important;}
+	}
+
+	/* ----------- Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 2)
+	  and (min-resolution: 192dpi) {
+	  	.side-menu-wrapper{
+	  		display: block;
+	  	    -moz-transition: all .3s ease-out;
+	        -webkit-transition: all .3s ease-out;
+	    	transition: all .3s ease-out;
+	    	width: 20% !important;
+	    	top:55px;
+	    }
+	   	.show-only-on-mobile{display: none !important;}
+		.show-only-on-desktop{display: block !important;}
+	}
+/*side-menu */
+
+/*right side content */
+.right-side-content {
+	display: block;
+	position: absolute !important;
+	left: 0%;
+	top:57px;
+	padding: 10px !important;
+	width: 100% !important
+}
+    /* ----------- Non-Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 1) {
+	  	.right-side-content {
+			left: 20%;
+			width: 80% !important;
+		}
+	}
+
+	/* ----------- Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 2)
+	  and (min-resolution: 192dpi) {
+	  	.right-side-content {
+			left: 20%;
+			width: 80% !important;
+		}
+	}
+/*right side content */
+
+.menu-item{
+	padding: 18px 10px 18px 10px;
+	border-bottom: 1px solid #A9A9A9;
+}
+.menu-item:hover{
+	background-color: rgba(153, 153, 153, 0.19);
+}
+
+   /* ----------- Non-Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 1) {
+	  	.menu-item{
+            padding: 18px 10px 18px 10px;
+            border-bottom: 1px solid #A9A9A9;
+        }
+        .menu-item:hover{
+            background-color: rgba(153, 153, 153, 0.19);
+        }
+	}
+
+	/* ----------- Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 2)
+	  and (min-resolution: 192dpi) {
+        .menu-item{
+            padding: 18px 10px 18px 10px;
+            border-bottom: 1px solid #A9A9A9;
+        }
+        .menu-item:hover{
+            background-color: rgba(153, 153, 153, 0.19);
+        }
+	}
+
+/* user list */
+.user-list-wrapper{
+    padding: 2px;
+}
+.user-list-box{
+    border: 1px solid #A9A9A9;
+}
+.user-list-box:hover{
+    background-color: #e4f2ff;
+    cursor: pointer;
+    cursor: hand;
+}
+.user-thumbnail-64x64{
+    width: 60px;
+    height: 60px;
+    margin:3px;
+    margin-right:5px;
+}
+
+   /* ----------- Non-Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 1) {
+	  	.user-list-wrapper{
+            padding: 10px;
+        }
+        .user-list-box{
+            border: 1px solid #A9A9A9;
+        }
+	}
+
+	/* ----------- Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 2)
+	  and (min-resolution: 192dpi) {
+	  	.user-list-wrapper{
+            padding: 10px;
+        }
+        .user-list-box{
+            border: 1px solid #A9A9A9;
+        }
+	}
+/* end user list */
+
+
+/** select append-icon**/
+
+.append-icon{
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 3px;
+    z-index: 2;
+    color: #999;
+}
+/** select append-icon**/
+
+
+/** permission table **/
+.permission{
+    margin-top:10px;
+}
+.permission tr{
+    border: 1px dotted #A9A9A9;
+}
+.permission tr td{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+ }
+/** permission table **/
+
+/** summary table **/
+table.summary{
+    width:100%
+}
+.summary tr td {
+    border: 1px dotted #A9A9A9;
+}
+.summary tr td {
+    padding: 10px;
+}
+.summary tr td:first-child{
+    font-weight: 600;
+    width:16%;
+}
+/** / summary table **/
+
+/** timetable table **/
+   .timetable{
+    font-size:8px;
+    font-weight:500;
+   }
+   /* ----------- Non-Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 1) {
+        .timetable{
+            font-size:13px;
+         }
+	}
+
+	/* ----------- Retina Screens ----------- */
+	@media screen
+	  and (min-device-width: 1200px)
+	  and (max-device-width: 1600px)
+	  and (-webkit-min-device-pixel-ratio: 2)
+	  and (min-resolution: 192dpi) {
+         .timetable{
+            font-size:13px;
+         }
+	}
+/** / timetable table **/
+
+
+/** login image **/
+.login-left-side-wrapper{
+    height:100%;
+    border-right: 1px solid #A9A9A9;
+}
+.login-left-side-default-img{
+    height: 100%;
+    width: 100%;
+}
+/** / login image **/
+
+/**parent details**/
+.parent{
+    background:white; padding:10px 5px 10px 5px;border:1px dotted #A9A9A9;
+}
+/** / parent details**/
+
+
+.flash-message .error{
+    color: red;
+}
+
+.flash-message .success{
+    color: green;
+}
+
+
+/** discussion **/
+
+    .discussion_wrapper p{
+            padding-top: 6px;
+            padding-bottom: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-align: justify;
+    }
+    .discussion_response{
+        padding-left: 10px;
+        padding-right:10px;
+        background-color:rgba(211, 211, 211, 0.23);
+        padding-bottom: 34px;
+        margin: 10px 0 10px 0;
+    }
+    .discussion_response p{
+      padding-top: 6px;
+      padding-bottom: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      text-align: justify;
+    }
+/** end discussion **/
